@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Book Gratis</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('assets/school-bg.jpg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    .subjudul {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .top-photos {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .profile {
+      text-align: center;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .photo-wrapper {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    .animated-border {
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 14px;
+      background: linear-gradient(270deg, #ff0000, #ff8800, #0000ff, #9900ff);
+      background-size: 600% 600%;
+      animation: borderAnimation 4s linear infinite;
+      z-index: 1;
+    }
+
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes borderAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .profile p {
+      margin: 0.5rem 0 0 0;
+      font-size: 0.9rem;
+    }
+
+    .profile a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .profile a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .background-control {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .background-control input {
+      padding: 0.5rem;
+      width: 300px;
+      max-width: 90%;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .background-control button {
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: #ccc;
+      margin-top: 0.5rem;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .footer i {
+      margin-right: 5px;
+    }
+
+    .footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .logo-box {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo-box img {
+  width: 190px; /* ubah sesuai besar logo */
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.2); /* kotak abu-abu transparan */
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+  </style>
+</head>
+<body>
+  <!-- Video Intro Otomatis -->
+<video id="introVideo" autoplay muted playsinline style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:9999;">
+  <source src="video-intro.mp4.mp4" type="video/mp4">
+</video>
+
+<script>
+  const video = document.getElementById('introVideo');
+
+  // Saat video selesai, sembunyikan video dan tampilkan konten
+  video.addEventListener('ended', () => {
+    video.style.display = 'none';
+    document.querySelector('.overlay').style.display = 'block';
+  });
+
+  // Sembunyikan konten saat intro masih berjalan
+  document.querySelector('.overlay').style.display = 'none';
+</script>
+
+<div class="overlay">
+  <div class="top-photos">
+    <div class="profile">
+      <div class="photo-wrapper">
+        <div class="animated-border"></div>
+        <img src="assets/foto1.jpg.jpg" alt="Foto 1" />
+      </div>
+      <p>FIZAL<br><a href="#" target="_blank"><i class="fab fa-instagram"></i> TIDAK ADA</a></p>
+    </div>
+    <div class="profile">
+      <div class="photo-wrapper">
+        <div class="animated-border"></div>
+        <img src="assets/foto2.jpg.jpg" alt="Foto 2" />
+      </div>
+      <p>FATAH<br><a href="https://www.instagram.com/fatahillahalmadjid" target="_blank"><i class="fab fa-instagram"></i> FATAH</a></p>
+    </div>
+    <div class="profile">
+      <div class="photo-wrapper">
+        <div class="animated-border"></div>
+        <img src="assets/foto3.jpg.jpg" alt="Foto 3" />
+      </div>
+      <p>FISAR<br><a href="https://www.instagram.com/fisar41" target="_blank"><i class="fab fa-instagram"></i> FISAR</a></p>
+    </div>
+  </div>
+  <div class="container">
+
+  <!-- Logo GIF di tengah -->
+  <div class="logo-box">
+    <img src="assets/logo-video.gif.gif" alt="Logo Bergerak" />
+  </div>
+  <div class="container">
+      <h1>BELAJAR BAHASA INGGRIS PEMULA</h1>
+      <p class="subjudul">Subjudul atau deskripsi singkat</p>
+      <p>Selamat datang di e-book ini! Konten e-book bisa kamu baca sesuka hati, mulai dari 1 sampai akhir.</p>
+      <p class="subjudul">GIMANA SIH CARA BELAJAR BAHASA INGGIS?</p>
+
+      <h2>01.: PENDAHULUAN</h2>
+      <p>Belajar bahasa Inggris tidak harus sulit. Dengan cara yang menyenangkan dan bertahap, kamu bisa mahir berbicara, menulis, dan memahami bahasa ini meskipun mulai dari nol.
+
+Belajar bahasa Inggris bukan hanya untuk ujian. Ini adalah keterampilan hidup. E-book ini akan membimbing kamu dari nol dengan cara yang mudah dimengerti.
+
+E-book ini adalah panduan rahasia yang akan bikin kamu ngerti dan belajar.</p>
+
+      <h2>02.: ALGORITMA BELAJAR BAHASA INGGRIS (MESIN RAHASIA DI BALIK BELAJAR BAHASA INGGRIS)</h2>
+      <p>
+Bahasa internasional
+
+Banyak digunakan di internet
+
+Membuka peluang kerja
+
+Bisa menikmati film, lagu, dan game tanpa subtitle
+
+
+
+Cara Kerja Algoritma:
+
+Example: Numbers to add, or a name to search.
+
+2. Process
+The algorithm performs steps to solve the problem.
+
+Example: Adding two numbers, or sorting a list.
+
+3. Output
+It gives an output — the answer or result.
+
+Example: The sum, or the list in order.
+
+
+
+</p>
+
+      <h2>03.: STRATEGI BELAJAR BAHASA INGGRIS</h2>
+      <p>1. Mulai dari Kosakata Dasar (Vocabulary)
+📌 Target: 5–10 kata baru per hari
+
+Fokus pada kata sehari-hari:
+
+Hello, Thank you, Eat, Drink, Go, School, etc.
+
+Gunakan aplikasi seperti Duolingo, Memrise, atau Anki untuk menghafal
+
+2. Belajar Kalimat Sederhana (Simple Sentences)
+📌 Pelajari struktur S + V + O (Subject + Verb + Object)
+Contoh:
+
+I eat rice.
+
+She likes music.
+
+We go to school.
+
+3. Mendengarkan Bahasa Inggris Setiap Hari
+📌 Latih pendengaran & aksen
+
+Dengarkan podcast, lagu, atau film berbahasa Inggris
+
+Gunakan subtitle Inggris untuk belajar sambil menonton
+
+4. Berbicara Setiap Hari (Speaking Practice)
+📌 Jangan takut salah
+
+Latih berbicara dengan diri sendiri di depan cermin
+
+Ulangi kalimat dari film/lirik lagu
+
+Gunakan aplikasi seperti HelloTalk, Tandem, atau AI Chatbot
+
+5. Tulis Jurnal Harian (Writing)
+📌 Biasakan menulis meskipun singkat
+Contoh:
+
+Today I wake up at 6 am.
+
+I eat breakfast and go to school.
+
+I feel happy today.
+
+6. Gunakan Label di Sekitar Rumah
+📌 Tempelkan post-it di benda-benda
+Contoh:
+
+“Door”, “Window”, “Chair”, “Fan”, “Notebook”
+
+Ini membantu otak mengasosiasikan benda dengan kata bahasa Inggris
+
+7. Tanya Jawab Otomatis / Q&A Harian
+📌 Buat pertanyaan-pertanyaan seperti:
+
+What is your name?
+
+Where are you from?
+
+What do you like to eat?
+
+Jawab dengan versi kamu sendiri setiap hari
+
+8. Kuasai 12 Tenses Secara Perlahan
+📌 Mulai dari yang paling sering dipakai:
+
+Simple Present
+
+Present Continuous
+
+Simple Past
+
+Future Tense
+(Pelajari satu dulu, baru lanjut ke berikutnya)
+
+9. Konsisten dan Buat Jadwal Belajar
+📌 Jadwal 15–30 menit per hari sudah cukup
+Contoh:
+
+Senin: Listening
+
+Selasa: Speaking
+
+Rabu: Vocabulary
+
+Kamis: Grammar
+
+Jumat: Writing
+
+Sabtu: Review
+
+Minggu: Nonton film / relaks
+
+10. Gabung Komunitas Belajar
+📌 Belajar bersama orang lain bikin lebih semangat
+
+Gabung grup Telegram/WA
+
+Cari partner belajar
+
+Ikut kelas gratis/online
+
+disclaimer : NEVER GIVE UP JUGA BUKA KELAS BELAJAR BAHASA INGGRIS,GRUP KELAS BAHASA INGGRIS,DAN CARI TEMAN ATAU PARTHNER
+</p>
+
+      <h2>04.: OPTIMASI</h2>
+      <p>✅ 1. Tentukan Tujuan Jelas
+Belajar tanpa tujuan = cepat bosan
+
+Apakah ingin bisa percakapan sehari-hari?
+
+Ingin kerja di luar negeri?
+
+Ingin nonton film tanpa subtitle?
+
+🎯 Contoh Tujuan:
+
+Bisa ngobrol 5 menit nonstop dalam Bahasa Inggris dalam 1 bulan
+
+✅ 2. Fokus ke “Skill Aktif” Dulu (Speaking & Listening)
+Orang Indonesia sering bisa baca (reading), tapi susah ngomong.
+
+📌 Solusi:
+
+Dengarkan podcast/suara native speaker setiap hari (minimal 10 menit)
+
+Ulangi (shadowing technique):
+
+Dengar → pause → tiru suaranya → lanjut
+
+Latihan speaking pakai AI, teman, atau di cermin
+
+✅ 3. Belajar dari Kalimat, Bukan Kata
+Menghafal kata satu-satu itu lambat.
+📌 Lebih baik hafalkan kalimat umum:
+
+Contoh:
+
+I don’t understand
+
+Can you help me?
+
+I’m hungry
+
+What time is it?
+
+💡 Dari situ kamu akan otomatis tahu kosakatanya juga.
+
+✅ 4. Gunakan Teknik Spaced Repetition
+Ulangi kata-kata penting berkala agar tidak mudah lupa.
+
+✅ Gunakan aplikasi seperti:
+
+Anki (gratis)
+
+Quizlet
+
+Memrise
+
+✅ 5. Ganti Bahasa HP dan Aplikasi ke Bahasa Inggris
+Otak akan mulai terbiasa dengan menu dan istilah asing.
+
+Contoh:
+
+Settings → Setelan
+
+Download → Unduh
+
+Airplane Mode → Mode Pesawat
+
+✅ 6. Gunakan Metode "5-10-30"
+Optimasi waktu belajar untuk hasil maksimal:
+
+5 menit: Review vocabulary lama
+
+10 menit: Listening / Speaking
+
+30 menit: Fokus satu topik (grammar, writing, speaking)
+
+✅ 7. Latihan dengan Cara Interaktif
+Jangan cuma baca buku!
+
+✅ Coba:
+
+Main game edukasi (Kahoot, Quizizz, Wordwall)
+
+Nonton video interaktif di YouTube
+
+Ikut challenge speaking 7 hari (bisa aku bantu buatkan)
+
+✅ 8. Gabungkan Dunia Nyata ke Bahasa Inggris
+Jadikan kegiatan sehari-hari sebagai momen belajar:
+
+Contoh:
+
+Saat masak: sebutkan “rice, onion, salt, pan”
+
+Saat jalan: “I am walking to the store”
+
+Buka Instagram: coba caption-in dalam Bahasa Inggris
+
+✅ 9. Latihan Pronunciation Lewat AI
+Biar aksen makin bagus
+
+✅ Tools gratis:
+
+YouGlish
+
+Elsa Speak
+
+Google Translate (tekan ikon suara)
+
+✅ 10. Jurnal Harian Bahasa Inggris
+Tulis 3–5 kalimat tentang harimu setiap malam.
+
+Contoh:
+
+txt
+Salin
+Edit
+Today I woke up at 7am. I drank coffee and watched a movie.  
+I feel happy because I learned new words.</p>
+
+      <h2>05.: TEKNIK BELAJAR</h2>
+      <p>1. 🔁 Shadowing Technique (Meniru Native Speaker)
+Dengarkan → Pause → Ulangi dengan suara keras
+
+🟢 Tujuan: Melatih pelafalan (pronunciation) dan kepercayaan diri saat bicara
+📌 Gunakan YouTube, podcast, atau film pendek
+
+2. 🎧 Active Listening
+Dengarkan dan cari tahu arti kata yang kamu tidak tahu
+
+🟢 Contoh sumber:
+
+Video pendek (5–10 menit) dari YouTube (BBC Learning English)
+
+Lagu berbahasa Inggris + lirik
+
+Aplikasi seperti BBC Learning, Voice of America
+
+3. 🗣️ Self-Talk (Ngomong Sendiri)
+Latihan ngomong sendiri pakai Bahasa Inggris di depan cermin
+
+🟢 Contoh kalimat:
+
+“I am brushing my teeth.”
+
+“Now, I want to go to sleep.”
+
+“I feel tired today.”
+
+📌 Tujuan: Melatih kelancaran dan berpikir otomatis dalam English
+
+4. ✍️ Write Daily Journal (Menulis Jurnal Harian)
+Tulis 3–5 kalimat tentang harimu
+
+🟢 Contoh:
+
+“Today I went to school.”
+
+“I ate chicken for lunch.”
+
+“I watched a funny video.”
+
+📌 Bisa ditulis tangan atau pakai Google Docs
+
+5. 🧩 Vocabulary Chunking (Kelompok Kosakata)
+Hafalkan kata-kata berdasarkan topik, bukan satu per satu
+
+🟢 Contoh topik:
+
+Makanan: rice, chicken, soup, spoon
+
+Sekolah: book, pen, chair, teacher
+
+Emosi: happy, tired, excited, angry
+
+📌 Gunakan flashcard (manual atau aplikasi seperti Anki)
+
+6. 📺 Visual Learning (Video + Gambar)
+Gunakan gambar/video untuk menghubungkan kata dengan makna
+
+🟢 Tools:
+
+Video anak-anak (belajar dari basic)
+
+Wordwall / Canva flashcard / Pinterest infographic
+
+7. 💬 Tanya Jawab Otomatis (Daily Q&A)
+Siapkan 5 pertanyaan dan latih jawabannya setiap hari
+
+🟢 Contoh:
+
+What's your name? → My name is Anna
+
+How are you today? → I’m fine
+
+Where are you from? → I’m from Indonesia
+
+8. 🎮 Game-Based Learning
+Belajar sambil bermain = tidak bosan
+
+🟢 Game yang direkomendasikan:
+
+Wordwall
+
+Kahoot
+
+Duolingo
+
+Crossword Puzzles
+
+9. 🎯 Tentukan Tema Mingguan
+Fokus ke satu topik per minggu
+
+🗓️ Contoh:
+
+Minggu 1: Greetings & Introductions
+
+Minggu 2: Daily Activities
+
+Minggu 3: Food & Drinks
+
+Minggu 4: Family & Friends
+
+10. 🗂️ Gabungkan Semua Teknik Secara Terstruktur
+Gunakan metode campuran: Listening + Speaking + Writing + Vocabulary
+📌 Belajar 15–30 menit per hari lebih efektif daripada belajar lama tapi jarang
+
+</p>
+
+      <h2>07.: TIPS LANJUTAN (JALAN PINTAS BELAJAR BAHASA INGGRIS)</h2>
+      <p>1. ✅ Belajar Grammar Tanpa Pusing
+Fokus ke grammar yang sering dipakai, jangan hafal semua teori dulu!
+
+📌 Urutan grammar yang sebaiknya kamu kuasai dulu:
+
+Simple Present – I eat rice every day
+
+Present Continuous – I am eating now
+
+Simple Past – I went to school yesterday
+
+Simple Future – I will call you tomorrow
+
+There is / There are – There is a cat on the table
+
+💡 Gunakan video animasi atau buku anak-anak untuk mempelajarinya dengan cara yang ringan
+
+2. 🧠 Gunakan Thinking in English
+Jangan menerjemahkan di kepala terus-menerus
+
+✅ Mulai dari kalimat sederhana:
+
+“I’m hungry now.”
+
+“I want to watch a movie.”
+
+“It’s hot outside.”
+
+📝 Tips: Buat rutinitas "ngomong dalam hati" pakai Bahasa Inggris
+
+3. 🧑‍🏫 Ikut Kelas atau Komunitas Bahasa Inggris
+Supaya kamu terbiasa dengar dan berbicara langsung
+
+📌 Pilihan:
+
+Grup WhatsApp / Telegram belajar English
+
+Kelas Zoom gratis di YouTube
+
+Aplikasi komunitas seperti Tandem, HelloTalk
+
+4. 📱 Gunakan Teknologi: AI & Aplikasi
+Belajar makin gampang pakai bantuan AI dan tools modern
+
+📲 Aplikasi berguna:
+
+Elsa Speak – untuk latihan pronunciation
+
+QuillBot – untuk bantu menulis ulang kalimat
+
+YouGlish – untuk dengar cara native speaker mengucapkan kata
+
+ChatGPT – bisa buat kamu latihan speaking atau nulis
+
+5. 📚 Latihan Membaca Cerita Pendek Bahasa Inggris
+Pilih cerita sederhana dengan kosakata umum
+
+🟢 Gunakan:
+
+Buku anak-anak bilingual
+
+Website: https://www.rong-chang.com
+
+Cerita interaktif (fabel, dialog, atau role play)
+
+6. 🎤 Latihan Ngomong (Speaking) Pakai Script
+Hafalkan dialog dan coba praktikkan
+
+🗣️ Contoh:
+
+text
+Salin
+Edit
+A: Hi! How are you?  
+B: I'm good, thanks! And you?  
+A: I'm fine too. What are you doing?  
+B: I'm watching a movie.
+📌 Ulangi berkali-kali sampai lancar
+➡️ Bisa dipakai saat main GTA RP atau game online juga
+
+7. ⏱️ Latihan 5 Menit Tiap Pagi dan Malam
+Konsistensi > Durasi
+✅ Gunakan 5 menit:
+
+Pagi: baca 3 kalimat + dengarkan 1 audio pendek
+
+Malam: tulis 3 kalimat + ucapkan 1 dialog
+
+8. 🌍 Jadikan Bahasa Inggris Sebagai Bagian Hidupmu
+Ubah HP ke Bahasa Inggris
+
+Tulis caption IG dalam Bahasa Inggris
+
+Gunakan Bahasa Inggris saat mencatat ide
+
+Dengarkan musik dengan lirik sambil membaca artinya
+
+9. 📆 Evaluasi Kemajuan Kamu Tiap Minggu
+Tanya dirimu:
+
+Berapa banyak kosakata baru saya tahu minggu ini?
+
+Apakah saya sudah berani bicara, walau salah?
+
+Apa yang masih sulit dipahami?
+
+📌 Simpan catatan belajar agar kamu tahu sejauh apa kamu berkembang
+
+</p>
+
+     <h2>08.: PENUTUP DAN AKSI (INI GILIRAN KAMU!)</h2>
+      <p>Ingat, belajar Bahasa Inggris itu bukan soal pintar atau tidak, tapi soal konsisten dan berani mencoba. Tidak apa-apa salah, yang penting terus latihan.
+
+Bahasa Inggris bukan cuma pelajaran, tapi kunci dunia:
+✅ Untuk kerja
+✅ Untuk main game
+✅ Untuk nonton film
+✅ Untuk cari teman dari negara lain
+✅ Bahkan untuk buka peluang hidup baru!
+
+🚀 Aksi Selanjutnya (Next Action Steps)
+Berikut ini langkah-langkah yang bisa kamu ambil mulai hari ini:
+
+📓 Buat catatan kosakata harian (5 kata per hari)
+
+🗣️ Latihan berbicara 5 menit tiap pagi (bisa di cermin)
+
+✍️ Tulis 3 kalimat tentang dirimu setiap malam
+
+🎧 Dengarkan 1 video pendek dalam Bahasa Inggris tiap hari
+
+✅ Review seminggu sekali: apa yang sudah kamu pelajari
+
+💬 Bonus: Kalimat Motivasi
+"Fluency is not about knowing everything. It’s about using what you know — again and again."</p>
+
+  <script>
+    function changeBackground() {
+      const url = document.getElementById("bg-url").value;
+      if (url) {
+        document.body.style.backgroundImage = `url('${url}')`;
+      }
+    }
+  </script>
+</body>
+</html>
+
